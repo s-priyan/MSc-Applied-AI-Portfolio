@@ -1,0 +1,21 @@
+Classes and Objects: Character, Player, Enemy, Room, and Game are classes with their respective attributes and methods.
+
+Inheritance: Player and Enemy classes inherit from Character.
+
+Encapsulation: Attributes like _health, _attack_power, and _name are private and manipulated via methods like take_damage() and is_alive().
+
+Polymorphism: Both Player and Enemy inherit the attack()  methods but can behave differently. (fixed and random)
+
+Abstraction: is_alive, take_damage, attack methods are define as abstract method and implemented in child class.
+
+Composition: Game object compose Player , Enemy and Room objects.
+
+
+
+expand ideas:
+
+increas the attack power threshold 
+
+made the gold coin scalable 
+
+set levels and rooms combination 
