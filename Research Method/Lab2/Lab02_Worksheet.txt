@@ -1,0 +1,35 @@
+# Lab 02 Worksheet
+
+## Exercise 1 answer:
+
+head(my_data, 7)
+
+## Exercise 2 answer:
+
+ggplot(my_data, aes(x = hp)) +
+  geom_histogram(binwidth = 40, fill = "blue", color = "black") +
+  facet_wrap(~ am, labeller = as_labeller(c("0" = "Automatic", "1" = "Manual"))) 
+
+## Exercise 3 answer:
+
+
+ggplot(my_data, aes(x = factor(cyl), y = hp)) + 
+  geom_bar(stat = "summary", fun = "mean", fill = "green", color = "black") +
+  labs(title = "Average Horsepower by Cylinder Count",
+       x = "Number of Cylinders",
+       y = "Average Horsepower")
+
+ggplot(my_data, aes(x = cyl, y = hp)) + 
+  geom_boxplot(aes(group = cyl), fill = "blue", color = "black") +
+  labs(title = "Horsepower Distribution by Cylinder Count",
+       x = "Number of Cylinders",
+       y = "Horsepower (hp)")
+
+## Exercise 4 answer:
+
+ggplot(my_data, aes(x = hp, y = mpg, color = factor(gear))) +
+  geom_point() +  
+  labs(title = "Horsepower vs MPG Colored by Number of Gears",
+       x = "Horsepower (hp)",
+       y = "Miles Per Gallon (mpg)",
+       color = "Number of Gears")

@@ -1,0 +1,75 @@
+Exercise 1 :
+
+
+# Load required libraries
+library(ggplot2)
+
+# Assign the contents of “iris” to “my_data”
+my_data <- iris
+
+# Print the number of levels of the factor “Species”
+num_levels <- length(levels(my_data$Species))
+print(num_levels)
+
+# Create a boxplot of “Species” vs “Sepal.Width”
+ggplot(my_data, aes(x = Species, y = Sepal.Width, fill = Species)) +
+  geom_boxplot() +
+  theme_classic()
+
+Exercise 2 :
+
+1.
+# Perform ANOVA
+res.aov <- aov(Sepal.Width ~ Species, data = iris)
+
+# Summary of the ANOVA
+summary(res.aov)
+
+2.
+Since the p-value <2e-16 which is  < 0.05, we conclude that there is a significant effect of Species on Sepal.Width. This means that at least one species has a significantly different mean Sepal.Width compared to the others.
+
+3. 
+pairwise.t.test(iris$Sepal.Width, iris$Species, 
+                p.adjust.method = "bonferroni")
+
+4.
+
+The pairwise t-test with Bonferroni correction provides the following adjusted p-values for comparisons between species:
+
+Comparison	          Adjusted p-value	           Significance (α = 0.05)
+Setosa vs. Versicolor	    < 2e-16	                   Significant
+Setosa vs. Virginica	    1.4e-09	                   Significant
+Versicolor vs. Virginica    0.0094	                   Significant
+
+All three comparisons show p-values below 0.05, meaning all species pairs have statistically significant differences in Sepal.Width.
+This confirms that Sepal.Width varies significantly among the three species.
+
+
+Exercise 3 :
+
+# Load required libraries
+library(ggpubr)
+
+# Read the data
+my_data <- read.csv("Lab04_data.csv")
+
+# Convert year and genotype to factors
+my_data$year <- as.factor(my_data$year)
+my_data$genotype <- as.factor(my_data$genotype)
+
+# Plot the effect of year and genotype on value using ggline()
+ggline(my_data, x = "year", y = "value", color = "genotype",
+       add = "mean_se", palette = "jco") +
+  labs(title = "Effect of Year and Genotype on Value")
+
+# Show the frequency table for year and genotype
+table(my_data$year, my_data$genotype)
+
+# Calculate a two-way ANOVA
+anova_result <- aov(value ~ year * genotype, data = my_data)
+summary(anova_result)
+
+# Perform a Tukey HSD post-hoc test
+tukey_result <- TukeyHSD(anova_result)
+print(tukey_result)
+

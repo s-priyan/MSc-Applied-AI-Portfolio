@@ -1,0 +1,98 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+plot(c
+```
+
+```{r}
+a <- c(5, 4, 1, 3, 7)
+a
+```
+
+```{r}
+a[5]
+```
+
+```{r}
+brian <- matrix(c("7", "Madonna", "12", "0", "jackfruit", "What?"),
+nrow=2, ncol=3)
+
+brian[2,1]
+```
+
+```{r}
+brian[2,]
+
+```
+
+```{r}
+```
+
+```{r}
+
+```
+
+```{r}
+mycars <- read.csv("./data/mycars.csv")
+```
+
+`{ars)}`
+
+```{r}
+# Gets summary statistics for the cst28_engl variable
+# Gets summary statistics for the cst28_engl variable
+summary(mycars$mpg)
+```
+
+```{r}
+# Calculate liters per 100 KM from gallon per mile
+mycars$lp100k <- 100/((mycars$mpg * 1.609)/4.546)
+```
+
+`{summary(mycars$mpg)}`
+
+```{r}
+# Delete the lp100k variable
+mycars$lp100k <- NULL
+```
+
+```{r}
+# List of variables
+vars <- c("make", "hp")
+# Get subset
+```
+
+```{r}
+# Get subset
+mycarssubset <- mycars[c("make", "hp")]
+```
+
+```{mycarssubset <- mycars[vars]}
+```
+
+```{r}
+mycars[4,]
+```
+
+```{r}
+# Creates newmycars data structure, subset of mycars data structure with car with more than 6 cylinders
+newmycars <- mycars[mycars$cyl>6,]
+newmycars
+```
+
+```{r}
+mycars$cyl>6
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

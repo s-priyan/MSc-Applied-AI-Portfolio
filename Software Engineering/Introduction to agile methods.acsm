@@ -1,0 +1,31 @@
+<fulfillmentToken fulfillmentType="loan" auth="user" xmlns="http://ns.adobe.com/adept">
+  <distributor>urn:uuid:8d9edc79-ee44-4f99-bbe2-89b004c7944f</distributor>
+  <operatorURL>http://drm.ebookshipping.com:8080/fulfillment</operatorURL>
+  <transaction>EB029204156025</transaction>
+  <purchase>2024-10-24T22:28:39+01:00</purchase>
+  <expiration>2024-11-14T21:28:39+00:00</expiration>
+  <resourceItemInfo>
+    <resource>urn:uuid:e04d8ffc-42d7-4815-a49c-8c5db05042ac</resource>
+    <resourceItem>1</resourceItem>
+    <metadata>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">Introduction to Agile Methods</dc:title>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Ph.D., Sondra Ashmore</dc:creator>
+      <dc:publisher xmlns:dc="http://purl.org/dc/elements/1.1/">Pearson Education</dc:publisher>
+      <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/">9780133435214</dc:identifier>
+      <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/epub+zip</dc:format>
+      <dc:language xmlns:dc="http://purl.org/dc/elements/1.1/">EN</dc:language>
+    </metadata>
+    <licenseToken>
+      <resource>urn:uuid:e04d8ffc-42d7-4815-a49c-8c5db05042ac</resource>
+      <permissions>
+        <display>
+          <until>2024-10-25T22:28:39+01:00</until>
+        </display>
+        <play>
+          <until>2024-10-25T22:28:39+01:00</until>
+        </play>
+      </permissions>
+    </licenseToken>
+  </resourceItemInfo>
+  <hmac>55e/wIsGY7gQhukuKwEZhSVT6VI=</hmac>
+</fulfillmentToken>

@@ -1,0 +1,51 @@
+# Lab 03 Worksheet
+
+## Exercise 1 answer:
+
+# Define labels for the data series
+ll <- c('artificial social agent',
+        'embodied conversational agent',
+        'social robot',
+        'virtual character',
+        'virtual human')
+
+# Combine all data series into a list
+data_series <- list(artificial_social_agent,
+                    embodied_conversational_agent,
+                    social_robot,
+                    virtual_character,
+                    virtual_human)
+
+# Determine the maximum value among all data series
+y_max <- max(sapply(data_series, max, na.rm = TRUE))
+
+# Generate unique colors using the rainbow function
+colors <- rainbow(length(data_series))
+
+# Plot the first data series
+plot(data_series[[1]], ylim = c(0, y_max), col = colors[1], type = 'b',
+     xlab = "Index", ylab = "Value", main = "Comparison of Data Series")
+
+# Add remaining data series using lines()
+for (i in 2:length(data_series)) {
+  lines(data_series[[i]], col = colors[i], type = 'b')
+}
+
+# Add a legend
+legend("topright", legend = ll, col = colors, lwd = 0.5, cex = 0.3)
+
+## Exercise 2 answer:
+
+pch: Specifies the plotting symbol (point shape) in the legend.
+cex: Adjusts the size of the text in the legend.
+
+## Exercise 3 answer:
+library(ggplot2)
+
+ggplot(all_merged_long, aes(x = year, y = value, color = variable, group = variable)) +
+  geom_line() +  # Adds lines to the plot
+  geom_point() + # Adds points to the plot
+  labs(x = "Year", y = "Count", title = "Trends Over Time") +
+  theme_minimal() + # Uses a clean theme
+  scale_color_manual(values = rainbow(length(unique(all_merged_long$variable)))) + 
+  theme(legend.title = element_blank()) # Removes legend title

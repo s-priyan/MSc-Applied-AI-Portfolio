@@ -1,0 +1,28 @@
+
+
+Exercise 1 answer:
+
+## 1.1 Background
+
+1. First RQ
+2. Second RQ
+
+Important things can be set in *italics* or **bold**. Strike out things to ~~remove~~.
+
+
+Exercise 3 answer:
+
+title: "Literate Programming Exercise"
+output: html_document
+
+
+
+- <span style="color:blue">Plotting</span>
+ 
+# Plotting
+
+A plot of sine and cosine.
+
+```{r, echo=TRUE}
+plot(sin(1:100/10), type = "l", col="red")
+lines(cos(1:100/10), col="blue")
